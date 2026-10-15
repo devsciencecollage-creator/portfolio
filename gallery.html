@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05040b">
+
+  <title>Design Gallery — Dev Baghel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .gallery-page {
+      padding-top: 65px;
+      padding-bottom: 100px;
+    }
+
+    .gallery-back {
+      color: var(--lav);
+      font-size: 13px;
+    }
+
+    .gallery-heading {
+      margin: 45px 0 15px;
+      font: 800 clamp(42px, 7vw, 82px)/1 var(--display);
+      letter-spacing: -.07em;
+    }
+
+    .gallery-description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 45px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--surface);
+      transition: transform .3s, border-color .3s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: #8957ff88;
+    }
+
+    .gallery-placeholder {
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      text-align: center;
+      background: radial-gradient(
+        ellipse at 50% 45%,
+        #39245f,
+        #100c19 70%
+      );
+    }
+
+    .gallery-placeholder span {
+      color: var(--lav);
+      font: 800 11px var(--display);
+      letter-spacing: .1em;
+    }
+
+    .gallery-placeholder strong {
+      display: block;
+      color: white;
+      font: 800 clamp(24px, 3vw, 42px)/1 var(--display);
+      letter-spacing: -.06em;
+      margin-top: 12px;
+    }
+
+    .gallery-caption {
+      padding: 15px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .gallery-help {
+      margin-top: 35px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D<span>.</span></span>
+      DEV BAGHEL
+    </a>
+
+    <a class="nav-cta" href="index.html#work">
+      Back to work ↗
+    </a>
+
+  </header>
+
+  <main class="section gallery-page">
+
+    <a class="gallery-back" href="index.html#work">
+      ← Back to Selected Work
+    </a>
+
+    <h1 class="gallery-heading" id="gallery-title">
+      Design Gallery<span class="yellow">.</span>
+    </h1>
+
+    <p class="gallery-description" id="gallery-description">
+      A collection of selected designs.
+    </p>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+
+    <p class="gallery-help">
+      These are temporary previews. Your real posters and designs
+      can be added here later.
+    </p>
+
+  </main>
+
+  <script src="gallery.js"></script>
+
+</body>
+
+</html>
